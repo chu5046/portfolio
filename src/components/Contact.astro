@@ -1,0 +1,229 @@
+---
+const contactInfo = [
+  {
+    icon: 'email',
+    label: '이메일',
+    value: 'yujuo99@naver.com',
+    
+  },
+  {
+    icon: 'phone',
+    label: '전화번호',
+    value: '010-5326-0163',
+   
+  },
+
+];
+---
+
+<!-- 밝은 테마 연락처 섹션 -->
+<section id="contact">
+  <div class="contact-wrapper">
+    <div class="section-header">
+      <span class="section-label">Contact</span>
+      <h2 class="section-title">연락처</h2>
+      <p class="section-description">
+        프로젝트 협업이나 채용 관련 문의는 언제든지 환영합니다.<br />
+        아래 연락처로 편하게 연락해 주세요.
+      </p>
+    </div>
+    
+    <div class="contact-grid">
+      {contactInfo.map((contact) => (
+        <a href={contact.href ?? undefined} class="contact-card" target={contact.href?.startsWith('http') ? '_blank' : undefined}
+        rel={contact.href?.startsWith('http') ? 'noopener' : undefined}
+        >
+          <div class="contact-icon">
+            {contact.icon === 'email' && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            )}
+            {contact.icon === 'phone' && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            )}
+            {contact.icon === 'github' && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+            )}
+            {contact.icon === 'linkedin' && (
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            )}
+          </div>
+          <div class="contact-info">
+            <span class="contact-label">{contact.label}</span>
+            <span class="contact-value">{contact.value}</span>
+          </div>
+          {contact.href && (
+            <svg
+              class="arrow-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M7 7h10v10"></path>
+              <path d="M7 17 17 7"></path>
+            </svg>
+          )}
+
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p class="copyright">2026 유주오. All rights reserved.</p>
+
+  </div>
+</footer>
+
+<style>
+  section {
+    padding: 6rem 1.5rem;
+  }
+
+  .contact-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin-bottom: 1rem;
+  }
+
+  .section-description {
+    color: var(--muted);
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+  }
+
+  .contact-card[href]:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+  }
+
+  .contact-card[href]:hover .arrow-icon {
+    transform: translate(2px, -2px);
+    color: var(--primary);
+  }
+
+  .contact-card:not([href]) {
+  cursor: default;
+}
+
+  .contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 12px;
+    color: var(--primary);
+    flex-shrink: 0;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .contact-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-value {
+    font-size: 0.9375rem;
+    color: var(--foreground);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .arrow-icon {
+    color: var(--muted-foreground);
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+  }
+
+  .footer {
+    padding: 2rem 1.5rem;
+    border-top: 1px solid var(--border);
+    background: var(--background-secondary);
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright {
+    color: var(--foreground);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .built-with {
+    color: var(--muted);
+    font-size: 0.8125rem;
+  }
+
+  @media (max-width: 480px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+    }
+  }
+</style>

@@ -1,0 +1,298 @@
+---
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>유주오 | Backend & DB Engineer</title>
+    <meta name="description" content="yjo 포트폴리오 웹사이트" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- 배경 장식 요소들 -->
+    <div class="bg-decoration">
+      <div class="bg-gradient-1"></div>
+      <div class="bg-gradient-2"></div>
+      <div class="bg-gradient-3"></div>
+      <div class="bg-grid"></div>
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+      </div>
+    </div>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /* 화려한 밝은 테마 색상 팔레트 */
+  :root {
+    --background: #ffffff;
+    --background-secondary: #f8fafc;
+    --background-tertiary: #f1f5f9;
+    --foreground: #0f172a;
+    --foreground-secondary: #1e293b;
+    --muted: #64748b;
+    --muted-foreground: #94a3b8;
+    --primary: #2563eb;
+    --primary-light: #3b82f6;
+    --primary-dark: #1d4ed8;
+    --primary-foreground: #ffffff;
+    --card: #ffffff;
+    --card-hover: #f1f5f9;
+    --border: #e2e8f0;
+    --border-hover: #cbd5e1;
+    --accent: #0ea5e9;
+    --accent-light: #38bdf8;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-primary: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 40px rgba(37, 99, 235, 0.15);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Noto Sans KR', 'Inter', sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  section {
+    padding: 6rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* 배경 장식 */
+  .bg-decoration {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .bg-gradient-1 {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float-slow 20s ease-in-out infinite;
+  }
+
+  .bg-gradient-2 {
+    position: absolute;
+    bottom: 20%;
+    left: -15%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: float-slow 25s ease-in-out infinite reverse;
+  }
+
+  .bg-gradient-3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.04) 0%, transparent 60%);
+    border-radius: 50%;
+    animation: pulse-slow 15s ease-in-out infinite;
+  }
+
+  /* 플로팅 도형들 */
+  .floating-shapes {
+    position: absolute;
+    inset: 0;
+  }
+
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+
+  .shape-1 {
+    top: 15%;
+    left: 10%;
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    animation: float-shape 8s ease-in-out infinite;
+  }
+
+  .shape-2 {
+    top: 30%;
+    right: 15%;
+    width: 8px;
+    height: 8px;
+    background: #7c3aed;
+    animation: float-shape 10s ease-in-out infinite 1s;
+  }
+
+  .shape-3 {
+    bottom: 40%;
+    left: 20%;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    animation: float-shape 12s ease-in-out infinite 2s;
+  }
+
+  .shape-4 {
+    bottom: 25%;
+    right: 25%;
+    width: 10px;
+    height: 10px;
+    background: var(--success);
+    animation: float-shape 9s ease-in-out infinite 0.5s;
+  }
+
+  .shape-5 {
+    top: 60%;
+    left: 5%;
+    width: 14px;
+    height: 14px;
+    background: #f59e0b;
+    animation: float-shape 11s ease-in-out infinite 1.5s;
+  }
+
+  @keyframes float-slow {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, 30px); }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.04; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.06; }
+  }
+
+  @keyframes float-shape {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+  }
+
+  /* 스크롤 애니메이션을 위한 유틸리티 */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* 글래스모피즘 카드 */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  /* 그라데이션 텍스트 */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* 호버 글로우 효과 */
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-4px);
+  }
+
+  @media (max-width: 768px) {
+    section {
+      padding: 4rem 1rem;
+    }
+
+    .bg-gradient-1,
+    .bg-gradient-2,
+    .bg-gradient-3 {
+      width: 300px;
+      height: 300px;
+    }
+  }
+</style>
+
+<script>
+  // 스크롤 애니메이션
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+      observer.observe(el);
+    });
+  });
+</script>
