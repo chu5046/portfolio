@@ -87,7 +87,7 @@ export const projects: Project[] = [
     title: '대구 전기차 충전소 정보 웹사이트',
     description: 'Next.js와 Java SpringBoot를 활용한 풀스택  전기차 충전소 정보 제공 애플리케이션',
     fullDescription: '대구광역시 전기차 충전소 정보를 제공하는 웹 서비스입니다. 공공데이터포털 API를 통해 충전소 데이터를 수집하고, Kakao Geocoding API로 주소를 좌표로 변환하여 지도 기반으로 시각화하였습니다. 충전소 이름 및 주소 검색, 급속/완속 필터링 기능을 제공하며, 회원가입/로그인 기능과 함께 회원별 충전소 즐겨찾기 기능을 구현하였습니다. 프론트엔드는 Next.js, 백엔드는 Spring Boot와 Spring Security를 활용한 JWT 기반 인증, 데이터베이스는 MongoDB Atlas를 사용하였으며, GitHub Actions를 통해 공공데이터를 주기적으로 수집하여 DB에 업데이트하는 자동화 파이프라인을 구축하였습니다.',
-    tech: ['React','Next.js', 'Spring Boot', 'MongoDB Atlas', 'GitHub Actions'],
+    tech: ['Next.js', 'Spring Boot', 'MongoDB Atlas', 'GitHub Actions'],
     images: [
       '/images/projects/fems-1.png',
       '/images/projects/fems-2.png',
