@@ -53,7 +53,7 @@ export const projects: Project[] = [
   {
     slug: 'smart-fems',
     title: '스마트 FEMS 프로젝트',
-    description: 'React와 Node.js를 활용한 풀스택 일정 관리 애플리케이션',
+    description: 'React와 Node.js를 활용한 풀스택 에너지 관리 애플리케이션',
     fullDescription: '공장 에너지 관리 시스템(Factory Energy Management System)를 웹 앱의 형태로 구현했습니다. 실시간 에너지 사용량 모니터링, 데이터 시각화, AI모델을 활용한 추후 에너지 사용량 예측 등을 구현하여 에너지 효율을 최적화하는 것을 목적으로 만들어졌습니다. 해당 프로젝트에서 저는 웹 앱에 기능을 제공하는 용도의 Node.js 서버와 AI예측값을 제공하는 용도의 Django 서버를 구축/관리하여 프론트엔드에서의 공장별 로그인, 예측값 데이터시각화 등의 기능이 원활히 이루어지는 것에 기여하였습니다. 또한 본 프로젝트로 \'인공지능 기술을 활용한 에너지 사용량 계측 웹 어플리케이션 설계 및 구현\' 이라는 논문을 기재하여 2024년 한국정보기술학회 추계종합학술대회에서 동상을 수상하였습니다.',
     tech: ['React Typescript','Node.js', 'MySQL InfluxDB', 'Pytorch'],
     images: [
@@ -78,6 +78,38 @@ export const projects: Project[] = [
     ],
     links: {
       github: 'https://github.com/minseokbae/KNU-ITEC0402-Backend',
+      demo:'https://www.youtube.com/embed/ltMRDMfrudc'
+    },
+  },
+
+  {
+    slug: 'Daegu-EV-Stations',
+    title: '대구 전기차 충전소 정보 웹사이트',
+    description: 'Next.js와 Java SpringBoot를 활용한 풀스택  전기차 충전소 정보 제공 애플리케이션',
+    fullDescription: '대구광역시 전기차 충전소 정보를 제공하는 웹 서비스입니다. 공공데이터포털 API를 통해 충전소 데이터를 수집하고, Kakao Geocoding API로 주소를 좌표로 변환하여 지도 기반으로 시각화하였습니다. 충전소 이름 및 주소 검색, 급속/완속 필터링 기능을 제공하며, 회원가입/로그인 기능과 함께 회원별 충전소 즐겨찾기 기능을 구현하였습니다. 프론트엔드는 Next.js, 백엔드는 Spring Boot와 Spring Security를 활용한 JWT 기반 인증, 데이터베이스는 MongoDB Atlas를 사용하였으며, GitHub Actions를 통해 공공데이터를 주기적으로 수집하여 DB에 업데이트하는 자동화 파이프라인을 구축하였습니다.',
+    tech: ['React','Next.js', 'Spring Boot', 'MongoDB Atlas', 'GitHub Actions'],
+    images: [
+      '/images/projects/fems-1.png',
+      '/images/projects/fems-2.png',
+      '/images/projects/fems-3.png',
+    ],
+    thumbnail: '/images/projects/fems-thumb.jpg',
+    period: '2026.05- 2026.06',
+    role: '백엔드/프론트엔드/DB/배포',
+    team: '개인 프로젝트',
+    features: [
+      '공공데이터 기반 실시간 충전소 정보 제공',
+      '지도 기반 충전소 위치 시각화',
+      '충전소 이름 및 주소 검색 / 급속·완속 필터링',
+      '회원 인증 및 즐겨찾기 기능',
+    ],
+    challenges: [
+      'Kakao Geocoding API 주소 변환 실패 시 충전소명 기반 재검색 로직 구현',
+      'Spring Security JWT 필터 연동 및 CORS 설정',
+      'GitHub Actions Cron 기반 공공데이터 자동 수집 구현',
+    ],
+    links: {
+      github: 'https://github.com/chu5046/EvStation',
       demo:'https://www.youtube.com/embed/ltMRDMfrudc'
     },
   },
