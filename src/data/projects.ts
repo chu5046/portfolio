@@ -111,7 +111,7 @@ export const projects: Project[] = [
     ],
     links: {
       github: 'https://github.com/chu5046/EvStation',
-      demo:'https://www.youtube.com/embed/1kHsz0QyEhQ',
+      demo:'https://www.youtube.com/embed/79QrbY62yg',
       website: 'https://evstation.pages.dev/'
     },
   },
