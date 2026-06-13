@@ -15,6 +15,7 @@ export interface Project {
     github?: string;
     demo?: string;
     docs?: string;
+    website?: string;
   };
 }
 
@@ -110,7 +111,8 @@ export const projects: Project[] = [
     ],
     links: {
       github: 'https://github.com/chu5046/EvStation',
-      demo:'https://www.youtube.com/embed/ltMRDMfrudc'
+      demo:'https://www.youtube.com/embed/1kHsz0QyEhQ',
+      website: 'https://evstation.pages.dev/'
     },
   },
 ];
