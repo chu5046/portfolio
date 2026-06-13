@@ -47,7 +47,7 @@ export const projects: Project[] = [
       '크로스 브라우저 호환성 확보',
     ],
     links: {
-      github: 'https://github.com/hyeonsu0311/itec0401_t6',
+     
       demo: 'https://www.youtube.com/embed/y8YFObZyzLk',
     },
   },
@@ -78,7 +78,7 @@ export const projects: Project[] = [
       'AI 예측모델 생성',
     ],
     links: {
-      github: 'https://github.com/minseokbae/KNU-ITEC0402-Backend',
+      
       demo:'https://www.youtube.com/embed/ltMRDMfrudc'
     },
   },
